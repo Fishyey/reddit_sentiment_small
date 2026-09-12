@@ -1,0 +1,15 @@
+.venv/
+.vscode/
+__pycache__/
+arctic_shift/
+*.csv
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
