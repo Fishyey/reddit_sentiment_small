@@ -1,0 +1,239 @@
+Recovered 3 interrupted work item(s).
+Traceback (most recent call last):
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 183, in run_bulk_fetch
+    await asyncio.gather(*(worker() for _ in range(max_concurrent)))
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 178, in worker
+    comments.extend(await fetch_top_comments(client, str(post["id"]), top_comments_per_post, comment_metric, max_comments_per_post))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 130, in fetch_top_comments
+    comments = await client.all_pages("/api/comments/search", {
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "link_id": clean_id, "sort": "asc", "limit": 100, "fields": VALID_COMMENT_API_FIELDS,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }, max_items=max_comments)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 87, in all_pages
+    page = await self.get_data(path, page_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 52, in get_data
+    await self.limiter.wait()
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 37, in wait
+    await asyncio.sleep(max(0, scheduled - loop.time()))
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/tasks.py", line 702, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/samuel/sentiment_analysis_corr/main.py", line 57, in <module>
+    result = asyncio.run(run_bulk_fetch(
+        store=store, run_id=args.run_id, subreddits=load_subreddits(args.subreddits),
+    ...<3 lines>...
+        retry_failed=args.retry_failed,
+    ))
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 132, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+gaierror exception in shielded future
+future: <Task finished name='Task-14' coro=<TCPConnector._resolve_host_with_throttle() done, defined at /Users/samuel/sentiment_analysis_corr/.venv/lib/python3.14/site-packages/aiohttp/connector.py:1191> exception=gaierror(8, 'nodename nor servname provided, or not known')>
+Traceback (most recent call last):
+  File "/Users/samuel/sentiment_analysis_corr/.venv/lib/python3.14/site-packages/aiohttp/connector.py", line 1571, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/.venv/lib/python3.14/site-packages/aiohttp/connector.py", line 1156, in _resolve_host
+    await future
+  File "/Users/samuel/sentiment_analysis_corr/.venv/lib/python3.14/site-packages/aiohttp/connector.py", line 1212, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/.venv/lib/python3.14/site-packages/aiohttp/resolver.py", line 47, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/base_events.py", line 936, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/socket.py", line 987, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+Recovered 3 interrupted work item(s).
+FAILED r/AskReddit 2024-12-02: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-01: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-05: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-05: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-08: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-21: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-31: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-31: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-31: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2024-12-23: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-07: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-07: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-06: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-07: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-03: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-07: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-07: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: Timeout on reading data from socket
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-09: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-13: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-19: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-10: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-12: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+FAILED r/AskReddit 2025-01-20: HTTP 422: {"data":null,"error":"Timeout. Maybe slow down a bit"}
+Traceback (most recent call last):
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 127, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 183, in run_bulk_fetch
+    await asyncio.gather(*(worker() for _ in range(max_concurrent)))
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 174, in worker
+    posts = await fetch_posts_for_day(client, subreddit, day, top_posts_per_day, sort_posts_by)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 121, in fetch_posts_for_day
+    items = await client.all_pages("/api/posts/search", {
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    })
+    ^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 87, in all_pages
+    page = await self.get_data(path, page_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 52, in get_data
+    await self.limiter.wait()
+  File "/Users/samuel/sentiment_analysis_corr/fetcher.py", line 37, in wait
+    await asyncio.sleep(max(0, scheduled - loop.time()))
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/tasks.py", line 702, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/samuel/sentiment_analysis_corr/main.py", line 57, in <module>
+    result = asyncio.run(run_bulk_fetch(
+        store=store, run_id=args.run_id, subreddits=load_subreddits(args.subreddits),
+    ...<3 lines>...
+        retry_failed=args.retry_failed,
+    ))
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 204, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Users/samuel/.local/share/uv/python/cpython-3.14.5-macos-aarch64-none/lib/python3.14/asyncio/runners.py", line 132, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

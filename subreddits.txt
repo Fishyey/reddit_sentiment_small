@@ -1,0 +1,26 @@
+# General Discussion
+# AskReddit
+NoStupidQuestions
+ExplainLikeImFive
+CasualConversation
+TrueAskReddit
+
+# Geographic Focus
+AskEurope
+AskAnAmerican
+LatinAmerica
+Africa
+AskAnAustralian
+UnitedKingdom
+AskUK
+Canada
+
+# Demographics
+AskMen
+AskWomen
+TwoXChromosomes
+GenZ
+Millennials
+GenerationX
+parenting
+childfree

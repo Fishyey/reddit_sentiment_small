@@ -1,0 +1,48 @@
+<div id="daily-sentiment-viz">
+  <h2>Daily RoBERTa sentiment</h2>
+  <p class="text-muted">Score = P(positive) − P(negative). Variance is calculated across selected posts within each UTC day.</p>
+  <div class="chart-wrap"><svg id="mean-chart" role="img" aria-label="Daily mean sentiment score"></svg></div>
+  <div class="chart-wrap"><svg id="variance-chart" role="img" aria-label="Daily sentiment-score variance"></svg></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root = document.getElementById("daily-sentiment-viz");
+  const means = [-.1980,-.2113,-.3178,-.1788,-.2649,-.2775,-.2758,-.2905,-.2268,-.2020,-.1636,-.1425,-.3097,-.2937,-.2448,-.1896,-.3130,-.3357,-.2735,-.2540,-.2987,-.1912,-.2146,-.1914,-.2695,-.2227,-.3710,-.1942,-.1576,-.2893,-.3061,-.2334,-.3184,-.2515,-.2937,-.1794,-.2062,-.2161,-.2959,-.2531,-.3060,-.2438,-.2583,-.2943,-.1853,-.3017,-.1608,-.3392,-.2963,-.2542,-.3166,-.2918,-.2999,-.2123,-.1998,-.2366,-.3031,-.2689,-.1189,-.1881,-.2860,-.2791,-.2488,-.2414,-.2112,-.3037,-.3022,-.2015,-.2861];
+  const variances = [.2689,.1969,.1733,.2405,.2100,.1624,.2314,.1928,.1962,.2010,.1886,.2131,.2200,.2284,.1658,.2021,.2106,.2171,.1579,.2067,.1863,.1927,.2108,.2244,.1826,.2604,.1631,.2528,.2195,.2168,.1795,.2116,.1409,.2354,.2284,.2009,.1901,.1956,.2505,.2426,.2120,.2260,.1291,.1943,.2409,.1855,.1993,.1665,.1186,.1795,.1452,.1863,.1848,.1396,.2040,.1772,.2036,.2084,.2451,.2317,.1950,.1898,.1847,.1790,.2686,.1997,.2427,.1410,.2108];
+  const posts = [59,55,57,56,58,56,57,56,58,57,57,56,55,58,57,56,55,56,54,55,56,57,54,57,53,56,57,54,56,55,57,56,54,57,57,54,58,55,57,55,56,52,57,56,55,57,52,55,57,55,58,60,57,57,57,58,57,58,57,57,51,57,58,56,57,55,58,57,56];
+  const start = new Date("2024-12-01T00:00:00Z");
+  const data = means.map((mean, i) => ({date: new Date(start.getTime() + i * 86400000), mean, variance: variances[i], posts: posts[i]}));
+  const colors = () => getComputedStyle(root);
+  function draw(svgId, key, title, colorToken, digits) {
+    const svg = d3.select("#" + svgId);
+    const width = Math.max(svg.node().parentElement.clientWidth, 320);
+    const height = 265, margin = {top: 35, right: 20, bottom: 48, left: 72};
+    const style = colors();
+    const color = style.getPropertyValue(colorToken).trim();
+    svg.attr("viewBox", `0 0 ${width} ${height}`).selectAll("*").remove();
+    svg.append("title").text(title);
+    svg.append("desc").text("A daily time series calculated from Twitter-RoBERTa post-level sentiment probabilities.");
+    const x = d3.scaleUtc().domain(d3.extent(data, d => d.date)).range([margin.left, width - margin.right]);
+    const extent = d3.extent(data, d => d[key]);
+    const span = Math.max(extent[1] - extent[0], .01);
+    const y = d3.scaleLinear().domain([extent[0] - span * .12, extent[1] + span * .12]).nice().range([height - margin.bottom, margin.top]);
+    svg.append("rect").attr("data-chart-frame", "").attr("x", margin.left).attr("y", margin.top).attr("width", width - margin.left - margin.right).attr("height", height - margin.top - margin.bottom).attr("fill", "none").attr("stroke", style.getPropertyValue("--border").trim());
+    svg.append("g").attr("transform", `translate(0,${height - margin.bottom})`).call(d3.axisBottom(x).ticks(width < 500 ? 4 : 7).tickFormat(d3.utcFormat("%b %-d"))).call(g => g.select(".domain").remove());
+    svg.append("g").attr("transform", `translate(${margin.left},0)").call(d3.axisLeft(y).ticks(5).tickFormat(d3.format(digits))).call(g => g.select(".domain").remove());
+    svg.selectAll(".tick text").attr("fill", style.getPropertyValue("--muted-foreground").trim()).style("font-size", "12px");
+    svg.selectAll(".tick line").attr("stroke", style.getPropertyValue("--border").trim());
+    svg.append("text").attr("x", margin.left).attr("y", 18).attr("fill", style.getPropertyValue("--foreground").trim()).style("font-size", "14px").text(title);
+    svg.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", width / 2).attr("y", height - 8).attr("text-anchor", "middle").attr("fill", style.getPropertyValue("--foreground").trim()).style("font-size", "12px").text("UTC day");
+    svg.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("transform", `translate(16,${height / 2}) rotate(-90)`).attr("text-anchor", "middle").attr("fill", style.getPropertyValue("--foreground").trim()).style("font-size", "12px").text(key === "mean" ? "Mean score" : "Sample variance");
+    svg.append("path").datum(data).attr("fill", "none").attr("stroke", color).attr("stroke-width", 2).attr("d", d3.line().x(d => x(d.date)).y(d => y(d[key])));
+    svg.selectAll(".point").data(data).join("circle").attr("cx", d => x(d.date)).attr("cy", d => y(d[key])).attr("r", 3).attr("fill", color).attr("data-tooltip", d => `${d3.utcFormat("%Y-%m-%d")(d.date)} · ${title}: ${d[key].toFixed(3)} · ${d.posts} posts`);
+  }
+  function render() {
+    draw("mean-chart", "mean", "Mean sentiment", "--viz-series-1", ".2f");
+    draw("variance-chart", "variance", "Sentiment variance", "--viz-series-2", ".2f");
+  }
+  new ResizeObserver(render).observe(root);
+  render();
+})();
+</script>

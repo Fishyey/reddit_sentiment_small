@@ -1,0 +1,1063 @@
+{
+  "model": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "posts": 3876,
+  "embedding_shape": [
+    3876,
+    768
+  ],
+  "pca_embedding_shape": [
+    3876,
+    20
+  ],
+  "pca_components": 20,
+  "pca_explained_variance_ratio": [
+    0.23241007328033447,
+    0.1250310093164444,
+    0.06309185177087784,
+    0.06003625690937042,
+    0.03133440017700195,
+    0.02346312440931797,
+    0.021505462005734444,
+    0.021171994507312775,
+    0.017931444570422173,
+    0.013435730710625648,
+    0.011360576376318932,
+    0.010774575173854828,
+    0.009224013425409794,
+    0.008767267689108849,
+    0.00776482280343771,
+    0.006816721521317959,
+    0.006380523554980755,
+    0.005790791008621454,
+    0.005736865568906069,
+    0.004668918903917074
+  ],
+  "pca_cumulative_explained_variance": 0.686696469783783,
+  "centers_shape": [
+    20,
+    20
+  ],
+  "kmeans_updates": 57,
+  "clusters": [
+    {
+      "cluster": 0,
+      "post_count": 138,
+      "mean_similarity": 0.7824,
+      "top_terms": [
+        "what",
+        "removed",
+        "african",
+        "how",
+        "trump",
+        "thoughts",
+        "gen",
+        "need",
+        "xico",
+        "con",
+        "que",
+        "first"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hl4u73",
+          "subreddit": "LatinAmerica",
+          "title": "guatemala",
+          "cluster_similarity": 0.9591811299324036
+        },
+        {
+          "id": "1i1nxyv",
+          "subreddit": "LatinAmerica",
+          "title": "Consejos financieros",
+          "cluster_similarity": 0.9429967403411865
+        },
+        {
+          "id": "1hvhxzz",
+          "subreddit": "LatinAmerica",
+          "title": "M\u00e9xico, TikTok ampl\u00eda comercio electr\u00f3nico",
+          "cluster_similarity": 0.9414849281311035
+        },
+        {
+          "id": "1haxv0l",
+          "subreddit": "LatinAmerica",
+          "title": "M\u00e9xico, diputado federal asesinado en tiroteo",
+          "cluster_similarity": 0.9403572082519531
+        },
+        {
+          "id": "1hch52t",
+          "subreddit": "LatinAmerica",
+          "title": "Boric presenta primer bus de hidr\u00f3geno fabricado en Chile",
+          "cluster_similarity": 0.9350059032440186
+        }
+      ]
+    },
+    {
+      "cluster": 1,
+      "post_count": 88,
+      "mean_similarity": 0.7927,
+      "top_terms": [
+        "they",
+        "people",
+        "what",
+        "how",
+        "like",
+        "would",
+        "their",
+        "more",
+        "gadaa",
+        "ingl",
+        "years",
+        "there"
+      ],
+      "representative_posts": [
+        {
+          "id": "1heiusz",
+          "subreddit": "TrueAskReddit",
+          "title": "How Do the Ultra-Wealthy Manage the Daily Minutiae of Life?",
+          "cluster_similarity": 0.9399088621139526
+        },
+        {
+          "id": "1hyoj6b",
+          "subreddit": "Africa",
+          "title": "Did you know that Egypt has more tanks than America, China, and all of Europe?",
+          "cluster_similarity": 0.9303587079048157
+        },
+        {
+          "id": "1i99ljo",
+          "subreddit": "TrueAskReddit",
+          "title": "What Are Your Thoughts on Simulism and Its Implications for Society?",
+          "cluster_similarity": 0.929661214351654
+        },
+        {
+          "id": "1hjspog",
+          "subreddit": "GenZ",
+          "title": "\u201cIt\u2019s just your personality bro\u201d",
+          "cluster_similarity": 0.9266648292541504
+        },
+        {
+          "id": "1i4pdcq",
+          "subreddit": "AskEurope",
+          "title": "Does your country have an equivalent to H\u00e4agen-Daz in terms of branding? And by that I mean a company with a foreign sounding name kept for general positive connotations with the country(region) and not authenticity?",
+          "cluster_similarity": 0.9225693345069885
+        }
+      ]
+    },
+    {
+      "cluster": 2,
+      "post_count": 156,
+      "mean_similarity": 0.707,
+      "top_terms": [
+        "what",
+        "why",
+        "how",
+        "some",
+        "would",
+        "people",
+        "think",
+        "country",
+        "white",
+        "women",
+        "they",
+        "there"
+      ],
+      "representative_posts": [
+        {
+          "id": "1ie4c31",
+          "subreddit": "AskEurope",
+          "title": "What are some reasons that Europeans wouldn\u2019t want to visit Australia?",
+          "cluster_similarity": 0.9002501368522644
+        },
+        {
+          "id": "1ie25sg",
+          "subreddit": "AskAnAustralian",
+          "title": "What are reasons Australians wouldn\u2019t want to visit the USA",
+          "cluster_similarity": 0.8858177065849304
+        },
+        {
+          "id": "1ie35u6",
+          "subreddit": "AskAnAmerican",
+          "title": "What are reasons an American wouldn\u2019t want to visit Australia?",
+          "cluster_similarity": 0.8832079172134399
+        },
+        {
+          "id": "1hz5j73",
+          "subreddit": "AskMen",
+          "title": "What are some unpopular truths women are not ready to accept?",
+          "cluster_similarity": 0.8748509883880615
+        },
+        {
+          "id": "1ic0r7f",
+          "subreddit": "TwoXChromosomes",
+          "title": "To the men",
+          "cluster_similarity": 0.8613900542259216
+        }
+      ]
+    },
+    {
+      "cluster": 3,
+      "post_count": 151,
+      "mean_similarity": 0.8091,
+      "top_terms": [
+        "https",
+        "more",
+        "poll",
+        "colombia",
+        "canada",
+        "new",
+        "can",
+        "www",
+        "country",
+        "removed",
+        "com",
+        "africa"
+      ],
+      "representative_posts": [
+        {
+          "id": "1ht1g6w",
+          "subreddit": "Canada",
+          "title": "Pierre Poilievre outlines goals, strategy, key players in Jordan Peterson interview",
+          "cluster_similarity": 0.9496192336082458
+        },
+        {
+          "id": "1hp68nr",
+          "subreddit": "Canada",
+          "title": "Quebec sovereignty talk resurfaces as Parti Qu\u00e9b\u00e9cois gains in polls",
+          "cluster_similarity": 0.9456228017807007
+        },
+        {
+          "id": "1i6vrgi",
+          "subreddit": "GenerationX",
+          "title": "I am Andrew - an AI companion created with Nexus Bond AI tools",
+          "cluster_similarity": 0.9437713623046875
+        },
+        {
+          "id": "1ia9zp5",
+          "subreddit": "UnitedKingdom",
+          "title": "Government planning its own Great British Railway\u2019s train ticket sales website",
+          "cluster_similarity": 0.9400433897972107
+        },
+        {
+          "id": "1hec2iw",
+          "subreddit": "UnitedKingdom",
+          "title": "New poll suggests Nigel Farage\u2019s Reform UK set to make 2025 a three-way race",
+          "cluster_similarity": 0.9241781234741211
+        }
+      ]
+    },
+    {
+      "cluster": 4,
+      "post_count": 223,
+      "mean_similarity": 0.7504,
+      "top_terms": [
+        "what",
+        "they",
+        "why",
+        "people",
+        "like",
+        "how",
+        "their",
+        "there",
+        "can",
+        "when",
+        "who",
+        "would"
+      ],
+      "representative_posts": [
+        {
+          "id": "1h5aotd",
+          "subreddit": "NoStupidQuestions",
+          "title": "Why or why aren't you a registered organ donor?",
+          "cluster_similarity": 0.9247214198112488
+        },
+        {
+          "id": "1hzoud5",
+          "subreddit": "NoStupidQuestions",
+          "title": "What else can you say when someone sneezes?",
+          "cluster_similarity": 0.920935332775116
+        },
+        {
+          "id": "1hpqvo3",
+          "subreddit": "GenZ",
+          "title": "I feel like gender affirming surgery should not be available to kids. ",
+          "cluster_similarity": 0.9150581955909729
+        },
+        {
+          "id": "1h4vora",
+          "subreddit": "TrueAskReddit",
+          "title": "Are most people cowards? ",
+          "cluster_similarity": 0.9115902185440063
+        },
+        {
+          "id": "1hfraom",
+          "subreddit": "TwoXChromosomes",
+          "title": "Why do so many women still take husband\u2019s last name? Why did you?",
+          "cluster_similarity": 0.9112931489944458
+        }
+      ]
+    },
+    {
+      "cluster": 5,
+      "post_count": 161,
+      "mean_similarity": 0.7692,
+      "top_terms": [
+        "trump",
+        "canada",
+        "trudeau",
+        "says",
+        "poilievre",
+        "tariffs",
+        "new",
+        "government",
+        "will",
+        "election",
+        "ban",
+        "liberal"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hxbrq3",
+          "subreddit": "UnitedKingdom",
+          "title": "Musk examines how to oust Starmer as UK prime minister before next election",
+          "cluster_similarity": 0.9377738833427429
+        },
+        {
+          "id": "1igcw5o",
+          "subreddit": "Canada",
+          "title": "After launching trade war, Trump says he will speak with Trudeau on Monday morning",
+          "cluster_similarity": 0.9237488508224487
+        },
+        {
+          "id": "1hjz6b1",
+          "subreddit": "UnitedKingdom",
+          "title": "No 'immediate' plans to ban Elon Musk giving Nigel Farage's Reform UK large donations - government",
+          "cluster_similarity": 0.9233972430229187
+        },
+        {
+          "id": "1i5so02",
+          "subreddit": "Canada",
+          "title": "Trump won't impose tariffs on Canada, other countries right away: reports | CBC News",
+          "cluster_similarity": 0.9108143448829651
+        },
+        {
+          "id": "1igpw4y",
+          "subreddit": "Canada",
+          "title": "White House: Mexico is 'serious', Canada appears to have 'misunderstood' Trump's executive order | Reuters",
+          "cluster_similarity": 0.9095094203948975
+        }
+      ]
+    },
+    {
+      "cluster": 6,
+      "post_count": 219,
+      "mean_similarity": 0.8481,
+      "top_terms": [
+        "her",
+        "she",
+        "like",
+        "they",
+        "what",
+        "him",
+        "can",
+        "people",
+        "how",
+        "want",
+        "out",
+        "get"
+      ],
+      "representative_posts": [
+        {
+          "id": "1h9rcpm",
+          "subreddit": "childfree",
+          "title": "Does anyone else just automatically lose respect for people as soon as they announce a pregnancy?",
+          "cluster_similarity": 0.9797348976135254
+        },
+        {
+          "id": "1ihzfw4",
+          "subreddit": "TwoXChromosomes",
+          "title": "At the end of my rope feeling forced to get an IUD. I didn't vote for this.",
+          "cluster_similarity": 0.9594928622245789
+        },
+        {
+          "id": "1ijwfej",
+          "subreddit": "parenting",
+          "title": "I hate Snapchat.",
+          "cluster_similarity": 0.957038402557373
+        },
+        {
+          "id": "1h87xxa",
+          "subreddit": "childfree",
+          "title": "Does anyone ever feel regret for not having kids? ",
+          "cluster_similarity": 0.9543177485466003
+        },
+        {
+          "id": "1i3p4fw",
+          "subreddit": "TwoXChromosomes",
+          "title": "I don't think the majority of men actually care about women",
+          "cluster_similarity": 0.949108362197876
+        }
+      ]
+    },
+    {
+      "cluster": 7,
+      "post_count": 164,
+      "mean_similarity": 0.814,
+      "top_terms": [
+        "like",
+        "what",
+        "they",
+        "she",
+        "how",
+        "when",
+        "her",
+        "had",
+        "would",
+        "one",
+        "want",
+        "get"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hptbvx",
+          "subreddit": "childfree",
+          "title": "Things I didn't expect, being childfree in my 30s",
+          "cluster_similarity": 0.9553791880607605
+        },
+        {
+          "id": "1hinmo9",
+          "subreddit": "CasualConversation",
+          "title": "What\u2019s something you weren\u2019t sure to splurge on, but then did and have no regrets about?",
+          "cluster_similarity": 0.9435128569602966
+        },
+        {
+          "id": "1hjyqc6",
+          "subreddit": "childfree",
+          "title": "One day per month is enough for you?",
+          "cluster_similarity": 0.9424527287483215
+        },
+        {
+          "id": "1hlg6za",
+          "subreddit": "CasualConversation",
+          "title": "Since no one in my life seems to care that I graduated from college, I'll tell a bunch of strangers online to share my happiness with someone :)",
+          "cluster_similarity": 0.9394853115081787
+        },
+        {
+          "id": "1hfwdue",
+          "subreddit": "CasualConversation",
+          "title": "I started wearing a winter scarf, and people treat me differently",
+          "cluster_similarity": 0.9387820959091187
+        }
+      ]
+    },
+    {
+      "cluster": 8,
+      "post_count": 185,
+      "mean_similarity": 0.8489,
+      "top_terms": [
+        "they",
+        "like",
+        "people",
+        "men",
+        "what",
+        "women",
+        "how",
+        "who",
+        "her",
+        "why",
+        "can",
+        "because"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hr9jec",
+          "subreddit": "GenZ",
+          "title": "Do you ever meet people who are trying too hard to be \"woke\"?",
+          "cluster_similarity": 0.9614429473876953
+        },
+        {
+          "id": "1h5cgn7",
+          "subreddit": "childfree",
+          "title": "\"You don't want the kid? Give it up for adoption!\"",
+          "cluster_similarity": 0.9581488370895386
+        },
+        {
+          "id": "1i1g4fp",
+          "subreddit": "TwoXChromosomes",
+          "title": "Our grandmas/great grandmas did not want 10-20 kids....",
+          "cluster_similarity": 0.9547227025032043
+        },
+        {
+          "id": "1hjgj1v",
+          "subreddit": "parenting",
+          "title": "Please Calm Me Down. Tell me I'm Wrong. ",
+          "cluster_similarity": 0.9524663686752319
+        },
+        {
+          "id": "1htljfb",
+          "subreddit": "TwoXChromosomes",
+          "title": "I\u2019m so frustrated and tired of the not all men/ yes all men discourse",
+          "cluster_similarity": 0.9516554474830627
+        }
+      ]
+    },
+    {
+      "cluster": 9,
+      "post_count": 341,
+      "mean_similarity": 0.8079,
+      "top_terms": [
+        "what",
+        "like",
+        "love",
+        "people",
+        "how",
+        "would",
+        "some",
+        "can",
+        "they",
+        "think",
+        "more",
+        "one"
+      ],
+      "representative_posts": [
+        {
+          "id": "1h65gj0",
+          "subreddit": "CasualConversation",
+          "title": "My kids are not twins but were born on the same day.",
+          "cluster_similarity": 0.9631451964378357
+        },
+        {
+          "id": "1hmcmj1",
+          "subreddit": "parenting",
+          "title": "What was the \u201chit\u201d gift in your house this Christmas? ",
+          "cluster_similarity": 0.9627119898796082
+        },
+        {
+          "id": "1horlgl",
+          "subreddit": "AskUK",
+          "title": "What Christmas present will you be regifting or taking to the charity shop in the new year? \ud83c\udf81",
+          "cluster_similarity": 0.9562092423439026
+        },
+        {
+          "id": "1hawhkc",
+          "subreddit": "AskEurope",
+          "title": "Are you Finns that happy?",
+          "cluster_similarity": 0.9530550837516785
+        },
+        {
+          "id": "1h3wfyj",
+          "subreddit": "AskAnAustralian",
+          "title": "How do you feel about Americans that move to Australia? ",
+          "cluster_similarity": 0.9506742358207703
+        }
+      ]
+    },
+    {
+      "cluster": 10,
+      "post_count": 266,
+      "mean_similarity": 0.771,
+      "top_terms": [
+        "what",
+        "how",
+        "would",
+        "like",
+        "they",
+        "people",
+        "country",
+        "their",
+        "there",
+        "when",
+        "some",
+        "more"
+      ],
+      "representative_posts": [
+        {
+          "id": "1huva7v",
+          "subreddit": "AskEurope",
+          "title": "Is today a holiday in your country? (And should it be?)",
+          "cluster_similarity": 0.9366868734359741
+        },
+        {
+          "id": "1hmulq0",
+          "subreddit": "AskEurope",
+          "title": "Does your language have different words for god and God? ",
+          "cluster_similarity": 0.9356055855751038
+        },
+        {
+          "id": "1hsycf7",
+          "subreddit": "AskUK",
+          "title": "Aldi vs Lidl, which do you prefer and why?",
+          "cluster_similarity": 0.9340423941612244
+        },
+        {
+          "id": "1hgchus",
+          "subreddit": "AskAnAmerican",
+          "title": "Are most Americans aware that the 2026 soccer world cup will be in the US?",
+          "cluster_similarity": 0.9327758550643921
+        },
+        {
+          "id": "1iaiw6f",
+          "subreddit": "AskAnAmerican",
+          "title": "Is \u201cSunday Dinner\u201d still a thing in your family?",
+          "cluster_similarity": 0.926259458065033
+        }
+      ]
+    },
+    {
+      "cluster": 11,
+      "post_count": 134,
+      "mean_similarity": 0.6752,
+      "top_terms": [
+        "what",
+        "like",
+        "they",
+        "how",
+        "when",
+        "people",
+        "out",
+        "would",
+        "had",
+        "time",
+        "get",
+        "know"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hwp5jw",
+          "subreddit": "CasualConversation",
+          "title": "What time do you actually get up in the morning? ",
+          "cluster_similarity": 0.9114265441894531
+        },
+        {
+          "id": "1iezv0n",
+          "subreddit": "CasualConversation",
+          "title": "Have your parents ever said something that really surprised you?",
+          "cluster_similarity": 0.8817749619483948
+        },
+        {
+          "id": "1i857nt",
+          "subreddit": "NoStupidQuestions",
+          "title": "What\u2019s something so common that you thought everyone did it until you found out they don\u2019t?",
+          "cluster_similarity": 0.8644877076148987
+        },
+        {
+          "id": "1hebiaj",
+          "subreddit": "Millennials",
+          "title": "Do we all avoid chains? Or is that a me thing?",
+          "cluster_similarity": 0.8529183268547058
+        },
+        {
+          "id": "1hthxe5",
+          "subreddit": "AskAnAmerican",
+          "title": "Is it really considered rude in the US to open a multi-pack to get just one drink?",
+          "cluster_similarity": 0.8493103384971619
+        }
+      ]
+    },
+    {
+      "cluster": 12,
+      "post_count": 241,
+      "mean_similarity": 0.7897,
+      "top_terms": [
+        "trump",
+        "says",
+        "canada",
+        "after",
+        "what",
+        "more",
+        "new",
+        "who",
+        "over",
+        "his",
+        "will",
+        "man"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hbsmde",
+          "subreddit": "UnitedKingdom",
+          "title": "Hundreds of tractors roll through Whitehall as farmers begin protest over \u2018hated\u2019 inheritance tax changes",
+          "cluster_similarity": 0.9488697052001953
+        },
+        {
+          "id": "1hllaca",
+          "subreddit": "UnitedKingdom",
+          "title": "Children are losing touch with British culture, warns BBC chief",
+          "cluster_similarity": 0.9336124658584595
+        },
+        {
+          "id": "1huxjc6",
+          "subreddit": "UnitedKingdom",
+          "title": "Elon Musk's Tesla convicted repeatedly for failing to cooperate with UK police",
+          "cluster_similarity": 0.9325106739997864
+        },
+        {
+          "id": "1ibm3r3",
+          "subreddit": "UnitedKingdom",
+          "title": "Misogyny identified as breeding ground for extremism in UK, says leaked report",
+          "cluster_similarity": 0.9244922995567322
+        },
+        {
+          "id": "1hecdkj",
+          "subreddit": "Canada",
+          "title": "Canada Post strike: Union negotiator says labour minister is 'treating us like children'",
+          "cluster_similarity": 0.9231688380241394
+        }
+      ]
+    },
+    {
+      "cluster": 13,
+      "post_count": 278,
+      "mean_similarity": 0.8174,
+      "top_terms": [
+        "why",
+        "what",
+        "people",
+        "how",
+        "they",
+        "like",
+        "can",
+        "women",
+        "their",
+        "even",
+        "who",
+        "them"
+      ],
+      "representative_posts": [
+        {
+          "id": "1ibd819",
+          "subreddit": "TrueAskReddit",
+          "title": "Why is this platform so left?",
+          "cluster_similarity": 0.9554436206817627
+        },
+        {
+          "id": "1iie5z9",
+          "subreddit": "AskAnAmerican",
+          "title": "whats with ohio and why alot of americans on the internet acts its like the worst place in the US?",
+          "cluster_similarity": 0.9546010494232178
+        },
+        {
+          "id": "1hrqgkj",
+          "subreddit": "NoStupidQuestions",
+          "title": "what does isis even want???",
+          "cluster_similarity": 0.9461148977279663
+        },
+        {
+          "id": "1hulpf1",
+          "subreddit": "AskUK",
+          "title": "Why do so many people believe that UK tap water is unsafe?",
+          "cluster_similarity": 0.9457699060440063
+        },
+        {
+          "id": "1ifdp19",
+          "subreddit": "childfree",
+          "title": "This is blatant propaganda",
+          "cluster_similarity": 0.9409542679786682
+        }
+      ]
+    },
+    {
+      "cluster": 14,
+      "post_count": 123,
+      "mean_similarity": 0.6433,
+      "top_terms": [
+        "what",
+        "how",
+        "never",
+        "would",
+        "like",
+        "why",
+        "something",
+        "what's",
+        "one",
+        "men",
+        "who",
+        "thing"
+      ],
+      "representative_posts": [
+        {
+          "id": "1i0nrvv",
+          "subreddit": "AskWomen",
+          "title": "what do you regret not doing in your twenties?",
+          "cluster_similarity": 0.8544479608535767
+        },
+        {
+          "id": "1hnjgtb",
+          "subreddit": "AskWomen",
+          "title": "What\u2019s a \u2018basic life skill\u2019 you secretly struggle with but would never admit in person?",
+          "cluster_similarity": 0.8351659774780273
+        },
+        {
+          "id": "1hpuldd",
+          "subreddit": "AskWomen",
+          "title": "What was your reason to cry on your b\u2019day !! Were you able to cope up ?",
+          "cluster_similarity": 0.8162722587585449
+        },
+        {
+          "id": "1ifmy7z",
+          "subreddit": "AskMen",
+          "title": "What's something you'd really like to do but can't because you are a man?",
+          "cluster_similarity": 0.8160891532897949
+        },
+        {
+          "id": "1hn875a",
+          "subreddit": "AskWomen",
+          "title": "Who in your life are you the most jealous of and why?",
+          "cluster_similarity": 0.8060739040374756
+        }
+      ]
+    },
+    {
+      "cluster": 15,
+      "post_count": 359,
+      "mean_similarity": 0.7821,
+      "top_terms": [
+        "what",
+        "how",
+        "would",
+        "country",
+        "did",
+        "who",
+        "does",
+        "most",
+        "women",
+        "when",
+        "like",
+        "think"
+      ],
+      "representative_posts": [
+        {
+          "id": "1i7zjj3",
+          "subreddit": "AskWomen",
+          "title": "Ladies, how do you all store your purse\u2019s? How many do you have?",
+          "cluster_similarity": 0.9523691534996033
+        },
+        {
+          "id": "1i4m5ae",
+          "subreddit": "AskAnAmerican",
+          "title": "Hello dear Americans! How common is it to have milk in your fridge? And do you ever use powdered milk instead of bottled milk for everyday consumption?",
+          "cluster_similarity": 0.9475821852684021
+        },
+        {
+          "id": "1hoyp0y",
+          "subreddit": "TwoXChromosomes",
+          "title": "Women in your 30s+ what advice do you have for someone in their mid 20s? ",
+          "cluster_similarity": 0.9377586841583252
+        },
+        {
+          "id": "1i8gcdt",
+          "subreddit": "Africa",
+          "title": "What countries do most of you guys live in?",
+          "cluster_similarity": 0.9350806474685669
+        },
+        {
+          "id": "1hfxz63",
+          "subreddit": "AskWomen",
+          "title": "When you look in the mirror, what do you see?",
+          "cluster_similarity": 0.9346949458122253
+        }
+      ]
+    },
+    {
+      "cluster": 16,
+      "post_count": 136,
+      "mean_similarity": 0.6881,
+      "top_terms": [
+        "what",
+        "people",
+        "like",
+        "how",
+        "they",
+        "why",
+        "when",
+        "there",
+        "their",
+        "feel",
+        "would",
+        "can"
+      ],
+      "representative_posts": [
+        {
+          "id": "1i9jgum",
+          "subreddit": "AskMen",
+          "title": "What are \u201cicks\u201d guys have? Cliches on girls dating profiles??",
+          "cluster_similarity": 0.8555217385292053
+        },
+        {
+          "id": "1hpoust",
+          "subreddit": "AskAnAmerican",
+          "title": "How much truth is in the movie clich\u00e9 about patients waiting for hours in hospital before being treated?",
+          "cluster_similarity": 0.8441261053085327
+        },
+        {
+          "id": "1hvc5oi",
+          "subreddit": "childfree",
+          "title": "Men on dating apps: how common are women who say they don\u2019t want kids in their profiles? ",
+          "cluster_similarity": 0.8408958315849304
+        },
+        {
+          "id": "1iixxgo",
+          "subreddit": "AskUK",
+          "title": "Would you judge someone going to a english country pub all by themselves for a meal?",
+          "cluster_similarity": 0.8383381366729736
+        },
+        {
+          "id": "1ijw9lp",
+          "subreddit": "AskUK",
+          "title": "Do you know any polyamorists?",
+          "cluster_similarity": 0.8376150131225586
+        }
+      ]
+    },
+    {
+      "cluster": 17,
+      "post_count": 164,
+      "mean_similarity": 0.7215,
+      "top_terms": [
+        "like",
+        "what",
+        "how",
+        "don't",
+        "they",
+        "feel",
+        "kids",
+        "can",
+        "i'm",
+        "get",
+        "one",
+        "why"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hxyycw",
+          "subreddit": "childfree",
+          "title": "Does anyone like kids?",
+          "cluster_similarity": 0.9063552618026733
+        },
+        {
+          "id": "1htndh9",
+          "subreddit": "CasualConversation",
+          "title": "People who like to cook, what food/dish is your nemesis?",
+          "cluster_similarity": 0.9030367136001587
+        },
+        {
+          "id": "1hqh2pj",
+          "subreddit": "GenZ",
+          "title": "To the lonely men of Gen Z how are you going to make it?",
+          "cluster_similarity": 0.8988102078437805
+        },
+        {
+          "id": "1hqwuxf",
+          "subreddit": "GenZ",
+          "title": "What interest/hobby on a dating profile immediately makes you nope out?",
+          "cluster_similarity": 0.8900907635688782
+        },
+        {
+          "id": "1hobupm",
+          "subreddit": "parenting",
+          "title": "Parents with \"nice\" kids, what's your secret?",
+          "cluster_similarity": 0.8875672221183777
+        }
+      ]
+    },
+    {
+      "cluster": 18,
+      "post_count": 152,
+      "mean_similarity": 0.681,
+      "top_terms": [
+        "why",
+        "eli",
+        "how",
+        "what",
+        "like",
+        "they",
+        "can",
+        "people",
+        "their",
+        "there",
+        "more",
+        "would"
+      ],
+      "representative_posts": [
+        {
+          "id": "1iioltb",
+          "subreddit": "ExplainLikeImFive",
+          "title": "ELI5: How do incarcerated people get jacked if all they eat is prison food?",
+          "cluster_similarity": 0.8896346688270569
+        },
+        {
+          "id": "1i09be8",
+          "subreddit": "ExplainLikeImFive",
+          "title": "ELI5: why don\u2019t the Japanese suffer from obesity like Americans do when they also consume a high amount of ultra processed foods and spend tons of hours at their desks?",
+          "cluster_similarity": 0.8651600480079651
+        },
+        {
+          "id": "1ht5azs",
+          "subreddit": "ExplainLikeImFive",
+          "title": "ELI5: Why don\u2019t car manufacturers re-release older models?",
+          "cluster_similarity": 0.862479567527771
+        },
+        {
+          "id": "1icx9n4",
+          "subreddit": "ExplainLikeImFive",
+          "title": "ELI5: How come you don't pronounce most of the word in French?",
+          "cluster_similarity": 0.8620389103889465
+        },
+        {
+          "id": "1i2tnc3",
+          "subreddit": "AskUK",
+          "title": "Do most of the bedroom doors here have locks or no? ",
+          "cluster_similarity": 0.8620094656944275
+        }
+      ]
+    },
+    {
+      "cluster": 19,
+      "post_count": 197,
+      "mean_similarity": 0.8554,
+      "top_terms": [
+        "she",
+        "her",
+        "like",
+        "him",
+        "they",
+        "his",
+        "out",
+        "kids",
+        "when",
+        "what",
+        "because",
+        "how"
+      ],
+      "representative_posts": [
+        {
+          "id": "1hefm5s",
+          "subreddit": "parenting",
+          "title": "45 year old friend + 11 year old",
+          "cluster_similarity": 0.9749861359596252
+        },
+        {
+          "id": "1hg5idu",
+          "subreddit": "childfree",
+          "title": "Asking for advice, my roommate secretly moved in her child",
+          "cluster_similarity": 0.9676690697669983
+        },
+        {
+          "id": "1ijoere",
+          "subreddit": "childfree",
+          "title": "My boyfriend's reaction when he found out I'd had a hysterectomy",
+          "cluster_similarity": 0.9593141674995422
+        },
+        {
+          "id": "1hj50oy",
+          "subreddit": "CasualConversation",
+          "title": "My parents signed me up for a plastic surgery consultation without telling me until the last minute- I was very upset until I learned a really interesting fact about myself ",
+          "cluster_similarity": 0.953166127204895
+        },
+        {
+          "id": "1hky6gp",
+          "subreddit": "childfree",
+          "title": "My coworker finally admitted the real reason breeders want us all to give in to the pressure",
+          "cluster_similarity": 0.9476867914199829
+        }
+      ]
+    }
+  ]
+}

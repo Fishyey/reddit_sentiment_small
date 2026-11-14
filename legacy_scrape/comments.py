@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from typing import List, Dict, Any, Optional, Union
 from collections import Counter
-from config import BASE_URL
+from fetch_cli.config import BASE_URL
 
 # Reusable HTTP session for connection pooling
 _session = requests.Session()

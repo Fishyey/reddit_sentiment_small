@@ -1,2 +1,5 @@
 pandas
 requests
+aiohttp
+torch
+transformers
